@@ -21,7 +21,6 @@
         <config-file target="config.xml" parent="/*">
             <feature name="CDVVideo">
                 <param name="ios-package" value="CDVVideo"/>
-                <param name="onload" value="true"/>
             </feature>
         </config-file>
 
