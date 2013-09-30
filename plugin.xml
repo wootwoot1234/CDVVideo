@@ -2,11 +2,11 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="com.adobe.plugins.CDVVideo"
-      version="2.1.2">
+      version="3.0.0">
     <name>CDVVideo</name>
-    <description>This plugin allows you to post usage information to your Google Analytics account.</description>
+    <description>This plugin allows you to play videos.</description>
     <license>MIT</license>
-    <keywords>cordova,google,analytics</keywords>
+    <keywords>cordova,video,videos,movies</keywords>
     
     <js-module src="www/CDVVideo.js" name="CDVVideo">
         <clobbers target="plugins.CDVVideo" />
