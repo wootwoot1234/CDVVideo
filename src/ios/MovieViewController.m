@@ -14,7 +14,7 @@
 
 - (id)initWithContentURL:(NSURL *)url andOrientation:(BOOL)orientation
 {
-    MovieViewController *o =  [[[[self class] alloc] initWithContentURL:url] autorelease];
+    MovieViewController *o =  [[[self class] alloc] initWithContentURL:url];
     o.orientation = orientation;
     return o;
 }

@@ -14,6 +14,6 @@
   NSString *movie;
 }
 
-- (void)play:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options;
+- (void) play:(CDVInvokedUrlCommand*)command;
 
 @end

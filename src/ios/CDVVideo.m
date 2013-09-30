@@ -13,10 +13,10 @@
 #import <Cordova/CDV.h>
 
 @implementation CDVVideo
-
-- (void)play:(NSMutableArray *)arguments withDict:(NSMutableDictionary *)options {
-  movie = [arguments objectAtIndex:1];
-  NSString *orient = [arguments objectAtIndex:2];
+- (void) play:(CDVInvokedUrlCommand*)command
+{
+  movie = [command.arguments objectAtIndex:0];
+  NSString *orient = [command.arguments objectAtIndex:1];
   NSRange range = [movie rangeOfString:@"http"];
   if(range.length > 0) {
     if ([@"YES" isEqualToString:orient]) {
@@ -26,11 +26,16 @@
     }
     
   } else {
-    NSArray *fileNameArr = [movie componentsSeparatedByString:@"."];
-    NSString *prefix = [fileNameArr objectAtIndex:0];
-    NSString *suffix = [fileNameArr objectAtIndex:1];
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:prefix ofType:suffix];
-    NSURL *fileURL = [NSURL fileURLWithPath:soundFilePath];
+    //NSArray *fileNameArr = [movie componentsSeparatedByString:@"."];
+    //NSString *prefix = [fileNameArr objectAtIndex:0];
+    //NSString *suffix = [fileNameArr objectAtIndex:1];
+    //NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:prefix ofType:suffix];
+    //NSURL *fileURL = [NSURL fileURLWithPath:soundFilePath];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *soundFilePath = [paths objectAtIndex:0];
+    NSURL *fileURL = [NSURL fileURLWithPath:[soundFilePath stringByAppendingPathComponent:movie]];
+    //NSURL *fileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:movie]];
+    //NSLog(soundFilePath);
     if ([@"YES" isEqualToString:orient]) {
       player = [[MovieViewController alloc] initWithContentURL:fileURL andOrientation:YES];
     } else {
@@ -52,9 +57,9 @@
 }
 
 - (void)dealloc {
-  [player release];
-  [movie release];
-  [super dealloc];
+  //[player release];
+  //[movie release];
+  //[super dealloc];
 }
 
 @end

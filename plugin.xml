@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.adobe.plugins.CDVVideo"
+      version="2.1.2">
+    <name>CDVVideo</name>
+    <description>This plugin allows you to post usage information to your Google Analytics account.</description>
+    <license>MIT</license>
+    <keywords>cordova,google,analytics</keywords>
+    
+    <js-module src="www/CDVVideo.js" name="CDVVideo">
+        <clobbers target="plugins.CDVVideo" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CDVVideo">
+                <param name="ios-package" value="CDVVideo"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/CDVVideo.m" />
+        <source-file src="src/ios/MovieViewController.m" />
+        
+        <header-file src="src/ios/CDVVideo.h" />
+        <header-file src="src/ios/MovieViewController.h" />
+    </platform>
+    
+</plugin>
