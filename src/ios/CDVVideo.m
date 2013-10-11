@@ -53,7 +53,7 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self
                                                   name:MPMoviePlayerPlaybackDidFinishNotification
                                                 object:nil];
-  [self writeJavascript:[NSString stringWithFormat:@"CDVVideo.finished(\"%@\");", movie]];
+  [self writeJavascript:[NSString stringWithFormat:@"window.plugins.CDVVideo.finished(\"%@\");", movie]];
   
 }
 
