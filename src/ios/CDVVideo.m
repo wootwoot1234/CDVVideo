@@ -27,16 +27,11 @@
     }
     
   } else {
-    //NSArray *fileNameArr = [movie componentsSeparatedByString:@"."];
-    //NSString *prefix = [fileNameArr objectAtIndex:0];
-    //NSString *suffix = [fileNameArr objectAtIndex:1];
-    //NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:prefix ofType:suffix];
-    //NSURL *fileURL = [NSURL fileURLWithPath:soundFilePath];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *soundFilePath = [paths objectAtIndex:0];
-    NSURL *fileURL = [NSURL fileURLWithPath:[soundFilePath stringByAppendingPathComponent:movie]];
-    //NSURL *fileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:movie]];
-    //NSLog(soundFilePath);
+    NSArray *fileNameArr = [movie componentsSeparatedByString:@"."];
+    NSString *prefix = [fileNameArr objectAtIndex:0];
+    NSString *suffix = [fileNameArr objectAtIndex:1];
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:prefix ofType:suffix];
+    NSURL *fileURL = [NSURL fileURLWithPath:soundFilePath];
     if ([@"YES" isEqualToString:orient]) {
       player = [[MovieViewController alloc] initWithContentURL:fileURL andOrientation:YES];
     } else {
