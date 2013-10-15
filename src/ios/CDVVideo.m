@@ -35,8 +35,6 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *soundFilePath = [paths objectAtIndex:0];
     NSURL *fileURL = [NSURL fileURLWithPath:[soundFilePath stringByAppendingPathComponent:movie]];
-    //NSURL *fileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:movie]];
-    //NSLog(soundFilePath);
     if ([@"YES" isEqualToString:orient]) {
       player = [[MovieViewController alloc] initWithContentURL:fileURL andOrientation:YES];
     } else {
