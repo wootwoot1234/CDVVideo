@@ -29,6 +29,8 @@
         
         <header-file src="src/ios/CDVVideo.h" />
         <header-file src="src/ios/MovieViewController.h" />
+    
+        <framework src="MediaPlayer.framework" />
     </platform>
     
 </plugin>
