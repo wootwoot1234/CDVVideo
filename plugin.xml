@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="CDVVideo"
-      version="3.0.0">
+      version="3.0.1">
     <name>CDVVideo</name>
     <description>This plugin allows you to play videos.</description>
     <license>MIT</license>
