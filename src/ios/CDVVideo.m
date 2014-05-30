@@ -48,6 +48,8 @@
 }
 
 - (void)MovieDidFinish:(NSNotification *)notification {
+  [player.moviePlayer stop];
+  player.moviePlayer.initialPlaybackTime = -1.0;
   [[NSNotificationCenter defaultCenter] removeObserver:self
                                                   name:MPMoviePlayerPlaybackDidFinishNotification
                                                 object:nil];
